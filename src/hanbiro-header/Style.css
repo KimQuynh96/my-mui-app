@@ -67,7 +67,6 @@
 }
 .Par-main{
   width: 100% ;
- 
 }
 .Header{
   padding-top: 10px;
@@ -75,10 +74,13 @@
   margin-top: 0 !important;
   display: flex;
   width: 100% !important;
-  justify-content: space-between;
   box-shadow: rgb(140 152 164 / 13%) 0px 0.375rem 1.5rem 0px;
   border: 1px solid rgb(231, 234, 243);
   border-radius: 10px;
+
+}
+.Sub-Header{
+  width: 100%;
 }
 .Cm-Bt{
   background-color: #006D75 !important;
@@ -117,21 +119,20 @@
 }
 
 .Box-Left{
-  width: 29%;
+  width: 100%;
   height: 100%;
   box-shadow: rgb(140 152 164 / 13%) 0px 0.375rem 1.5rem 0px;
   border: 1px solid rgb(231, 234, 243);
   border-radius: 5px;
 }
 .Box-Center{
-  width: 40%;
-  background-color: bisque;
+  width: 100%;
   box-shadow: rgb(140 152 164 / 13%) 0px 0.375rem 1.5rem 0px;
   border: 1px solid rgb(231, 234, 243);
   border-radius: 5px;
 }
 .Box-Right{
-  width: 29%;
+  width: 100%;
   background-color: aqua;
   box-shadow: rgb(140 152 164 / 13%) 0px 0.375rem 1.5rem 0px;
   border: 1px solid rgb(231, 234, 243);
@@ -147,12 +148,19 @@
   border: 2px solid #006D75;
   border-radius: 3px;
   text-align: center;
+  font-size: 14px;
+  font-weight:400;
+  color: #6A6A6A;
+}
+.Tab-Hearder{
+  margin-top: 5px;
 }
 .List-Item{
   width: 96%;
   margin-left: 2%;
   
 }
+
 .Item-Call{
   padding: 10px;
   background-color: #E6F7FF;
@@ -161,6 +169,16 @@
 .Item-white{
   padding: 10px;
   display: flex;
+}
+.TabList{
+  display: flex !important;
+  justify-content: space-between !important;
+}
+.TabList-Item{
+  width: 33%;
+  /* border: 2px solid #006D75 !important;
+  border-radius: 3px !important; */
+  text-transform: capitalize !important;
 }
 .IconImgae{
   font-size: 30px;
@@ -174,4 +192,43 @@
 .Item-des{
   font-size: 11px !important;
   color: #696969;
+}
+.Tab-Hearder span {
+  color: #006D75 !important;
+}
+.quynh{
+  display: flex;
+  justify-content: space-between;
+  width: 100% !important;
+}
+.Item-Right{
+  float: right;
+  margin-right: 0 !important;
+}
+/* .Item-Left{
+  margin-left: 22px !important;
+} */
+.Sub-Content{
+  width: 100%;
+  margin-left: 0 !important;
+}
+.Direction{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  
+}
+.PlayCall{
+  background-color: #F0F0F0;
+  border-radius: 35px;
+  margin-bottom: 10px;
+}
+.Direction-Item{
+  font-size: 15px !important;
+}
+@media only screen and (max-width: 1023px) {
+ 
+  .kimtest {
+    display: none;
+  }
 }

@@ -371,7 +371,7 @@ export default function MiniDrawer() {
           {/*  */}
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open} >
+      <Drawer variant="permanent" open={open} className="kimtest">
         <DrawerHeader className="Left-Menu">
           <IconButton onClick={handleDrawerClose}>
             <Typography className="LogoName">

@@ -6,11 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 export default function ViewCall() {
   return (
     <>
-      <Row>
-        <Col xs={12} md={12}>
-          <LeftMenu />
-        </Col>
-      </Row>
+      <LeftMenu />
     </>
   );
 }
