@@ -12,6 +12,13 @@ import Insctuction from './Insctuction'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import TextField from '@mui/material/TextField';
+import Autocomplete from '@mui/material/Autocomplete';
+import Fab from '@mui/material/Fab';
+import EditIcon from '@mui/icons-material/Edit';
+
+
+
 export default function TextButtons() {
   return (
     <>
@@ -22,14 +29,17 @@ export default function TextButtons() {
             <Box className="Item-Left">
               <Button variant="primary" className="Cm-Bt"><IoMdArrowRoundBack /></Button>
               <Button variant="primary" className="Btn-acti">Activity</Button>
-              <Button variant="primary" className="Btn-acti">Call Subject</Button>
+
+              <Typography component="span" className="Text-Call">Call Subject</Typography>
             </Box>
           </Col>
           <Col xs={12} md={6}>
             <Box className="Item-Right">
               <Button variant="primary" className="Btn-acti">Done</Button>
               <Button variant="primary" className="Btn-acti">More <BsChevronDown className="IconMore" /></Button>
-              <Button variant="primary" className="Btn-add">< IoMdAdd className="IconAdd" /> New</Button>
+              <Fab color="secondary" aria-label="edit" className="Icon-New">
+                <EditIcon className="Icon-Write" />
+              </Fab>
             </Box>
           </Col>
         </Row>
@@ -37,7 +47,7 @@ export default function TextButtons() {
 
       <Box className="Content" >
         <Row className="Sub-Content">
-          <Col xs={12} md={4} >
+          <Col xs={12} md={3} >
             <Box className="Box-Left">
               <Box >
                 <Box className="Left-Header">
@@ -113,7 +123,7 @@ export default function TextButtons() {
               </Box>
             </Box>
           </Col>
-          <Col xs={12} md={4} >
+          <Col xs={12} md={5} >
             <Box className="Box-Center">
               <Insctuction />
             </Box>
