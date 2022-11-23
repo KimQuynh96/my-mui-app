@@ -15,18 +15,23 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import Divider from '@mui/material/Divider';
-import Carot from "./girl.jpg";
-import { AiOutlineSound, AiOutlineMore, AiFillEdit, AiOutlineFileImage } from 'react-icons/ai';
+import Carot from "./assets/girl.jpg";
+import Thocon from "./assets/thocon.jpg";
+import NoiThat from "./assets/noithat.jpg";
+import Hinhve from "./assets/hinhve.jpg";
+import Hoa from "./assets/hoatulip.jpg";
+import { AiOutlineSound, AiOutlineMore, AiFillEdit, AiOutlineFileImage, AiOutlineClockCircle, AiOutlineClose } from 'react-icons/ai';
 import { SlNote } from 'react-icons/sl';
+import { FiDownload } from 'react-icons/fi';
 import { SiIconify } from 'react-icons/si';
 import { IoMdSend } from 'react-icons/io';
 import { MdOutlineAttachment } from 'react-icons/md';
 import { RiAttachment2 } from 'react-icons/ri';
-import { BsDownload } from 'react-icons/bs';
+import { BsDownload, BsPencil } from 'react-icons/bs';
 import TextField from '@mui/material/TextField';
-
-
-
+import MuiGrid from '@mui/material/Grid';
+import { styled } from '@mui/material/styles';
+import Chip from '@mui/material/Chip';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 const steps = [
@@ -34,6 +39,15 @@ const steps = [
   'Doing',
   'Done',
 ];
+
+
+const Root = styled('div')(({ theme }) => ({
+  width: '100%',
+  ...theme.typography.body2,
+  '& > :not(style) + :not(style)': {
+    marginTop: theme.spacing(2),
+  },
+}));
 
 export default function LabTabs() {
   const [value, setValue] = React.useState('1');
@@ -47,7 +61,7 @@ export default function LabTabs() {
     setValue1(newValue);
   };
 
-
+  
   return (
     <Box sx={{ width: '100%', typography: 'body1' }} className="Tab-Hearder">
       <TabContext value={value}>
@@ -218,11 +232,157 @@ export default function LabTabs() {
                 </Box>
                 <Box className="List-TimeLine">
                   <Box className="List-avatar">
-                    Test
+                    <CardMedia>
+                      <Box className="His-avtar">
+                        <img src={Carot} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+
+                      </Box>
+                    </CardMedia>
+                    <Box className="His-message-List">
+                      <Box className="His-message-1">
+                        <Box className="His-message-item">
+                          <Typography className="His-message-text">MSR</Typography>
+                          <AiOutlineClockCircle className="His-clock" />
+                          <Typography className="His-message-time">11:15</Typography>
+                        </Box>
+                        <Box className="His-message-item-1">
+                          <BsPencil className="His-message-write" />
+                          <AiOutlineClose className="His-message-close" />
+                        </Box>
+
+                      </Box>
+                      <Box className="His-message-2">
+                        <Typography className="His-message-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Typography>
+                        <Box className="His-message-item-1">
+                          <MdOutlineAttachment className="His-message-file" />
+                          <Typography className="His-file-text">abc.doc</Typography>
+                        </Box>
+                        <Box className="His-message-item-1">
+                          <MdOutlineAttachment className="His-message-file" />
+                          <Typography className="His-file-text">def.pdf</Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box className="List-TimeLine">
+                  <Box className="List-avatar">
+                    <CardMedia>
+                      <Box className="His-avtar">
+                        <img src={Thocon} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+                      </Box>
+                    </CardMedia>
+                    <Box className="His-message-List">
+                      <Box className="His-message-1">
+                        <Box className="His-message-item">
+                          <Typography className="His-message-text">KDH</Typography>
+                          <AiOutlineClockCircle className="His-clock" />
+                          <Typography className="His-message-time">10:00</Typography>
+                        </Box>
+                        <Box className="His-message-item-1">
+                          <BsPencil className="His-message-write" />
+                          <AiOutlineClose className="His-message-close" />
+                        </Box>
+
+                      </Box>
+                      <Box className="His-message-2">
+                        <Typography className="His-message-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam arcu ligula, ornare sit amet porttitor quis, placerat quis lacus. Mauris lectus turpis, rutrum non placerat id, placerat et nisl.</Typography>
+
+                      </Box>
+                    </Box>
                   </Box>
                 </Box>
               </TabPanel>
-              <TabPanel value="2">Item Two</TabPanel>
+              <TabPanel value="2">
+                <Box className="List-TimeLine">
+                  <Typography className="Text-TimeLine">22-11-2022</Typography>
+                  <Box className="Time-Header">
+                    <Divider className="Divider-1" />
+                    <Divider className="Divider-2" />
+                    <Divider className="Divider" />
+                    <Divider className="Divider-1" />
+                    <Divider className="Divider-2" />
+                  </Box>
+                </Box>
+                <Box className="List-TimeLine">
+                  <Box className="List-avatar">
+                    <CardMedia>
+                      <Box className="His-avtar">
+                        <img src={Thocon} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+                      </Box>
+                    </CardMedia>
+
+                    <Box className="His-message-list">
+                      <Typography className="Team-channel-name">Ca Rot</Typography>
+                      <Box className="Team-channel-text">
+
+                        <Box className="His-message-item">
+                          <Typography className="His-message-text">How Can I order the products?</Typography>
+                        </Box>
+                      </Box>
+                      <Box className="Team-list-file">
+                        <Box className="Team-channel">
+                          <Box >
+                            <img src={NoiThat} style={{ width: 110, height: 100 }} className="Team-channel-img"></img>
+                            <Box className="Team-name-file">
+                              <Typography className="Channel-name-file">Noi That.jpg</Typography>
+                            </Box>
+                          </Box>
+                          <Box>
+                            <img src={Thocon} style={{ width: 110, height: 100 }} className="Team-channel-img"></img>
+                            <Box className="Team-name-file">
+                              <Typography className="Channel-name-file">Hoa Hôn..jpg</Typography>
+                            </Box>
+                          </Box>
+                          <Box>
+                            <img src={Hinhve} style={{ width: 110, height: 100 }} className="Team-channel-img"></img>
+                            <Box className="Team-name-file">
+                              <Typography className="Channel-name-file">Hinh Ve.jpg</Typography>
+                            </Box>
+                          </Box>
+                          <Box>
+                            <img src={Hoa} style={{ width: 110, height: 100 }} className="Team-channel-img"></img>
+                            <Box className="Team-name-file">
+                              <Typography className="Channel-name-file">Hoa.jpg</Typography>
+                            </Box>
+                          </Box>
+                        </Box>
+                        <FiDownload className="Channel-name-down" />
+                      </Box>
+                      <Typography className="Team-channel-time">9:00</Typography>
+                    </Box>
+                  </Box>
+                </Box>
+                <Box className="List-TimeLine">
+                  <Box className="List-avatar-right">
+                    <Box className="His-message-list">
+                      <Typography className="Team-channel-name-right" >Be Gai</Typography>
+                      <Box className="Team-channel-text-right">
+
+                        <Box className="His-message-item">
+                          <Typography className="His-message-text-right">
+                            Hello ! <br />
+                            Let me create a ticket for you.</Typography>
+                        </Box>
+                      </Box>
+
+                      <Typography className="Team-channel-time-right">10:00</Typography>
+                    </Box>
+                    <CardMedia>
+                      <Box className="His-avtar">
+                        <img src={Hinhve} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+                      </Box>
+                    </CardMedia>
+                  </Box>
+                </Box>
+                <Root >
+                 
+                  <Divider className="Root">
+                    <Chip label="To Day" />
+                  </Divider>
+                  Test
+                </Root>
+              </TabPanel>
             </TabContext>
           </Box>
         </TabPanel>
