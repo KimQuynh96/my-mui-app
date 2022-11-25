@@ -1,5 +1,5 @@
 .nav {
-  background-color: #000022 !important;
+  background-color: #006D75 !important;
   box-shadow: none !important;
   padding-left: 0 !important;
 
@@ -51,7 +51,7 @@
 }
 
 .ParLeft {
-  background-color: #000022	 !important;
+  background-color: #012B2E	 !important;
   position: absolute;
   height: 100%;
   color: white;
@@ -245,14 +245,29 @@
   width: 19%;
   border-radius: 20px;
 }
-
+.Timeline-text{
+  font-size: 15px !important;
+}
 .Text-TimeLine {
   display: flex;
   justify-content: center;
-  font-weight: 900 !important;
-  margin-top: 30px !important;
+  font-weight: 500 !important;
+  font-size: 15px!important;
 }
-
+.Date-TimeLine{
+  font-size: 15px!important;
+}
+.Timeline-icon{
+  background-color: #17A2B8;
+  box-shadow: rgb(140 152 164 / 13%) 0px 0.375rem 1.5rem 0px;
+  border: 1px solid rgb(231, 234, 243);
+  border-radius: 4px;
+  padding: 5px 10px;
+  color: white;
+}
+.imelineItem{
+  font-size: 13px !important;
+}
 .List-TimeLine {
   width: 98%;
   margin-left: 1%;
@@ -277,21 +292,32 @@
 
 .Item-Call {
   padding: 10px;
-  background-color: #E6F7FF;
-
+  display: flex;
+  border-top: 1px solid rgb(231, 234, 243);
+}
+.Item-Firt {
+  padding: 10px;
   display: flex;
 }
 
 .Item-white {
   padding: 10px;
   display: flex;
+  border-top: 1px solid rgb(231, 234, 243);
 }
 
 .TabList {
   display: flex !important;
   justify-content: space-between !important;
 }
-
+.TabList-md{
+  display: flex !important;
+  justify-content: space-between !important;
+  width: 100% !important;
+}
+.TabList-md-list{
+ margin: auto !important;
+}
 .message {
   margin: auto;
   width: 96%;
@@ -330,7 +356,11 @@
   border: 1px solid rgb(231, 234, 243);
   border-radius: 3px;
 }
-
+/* #footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+} */
 .His-message-List {
   width: 100%;
 }
@@ -526,16 +556,22 @@
 }
 
 .TabList-More {
-  width: 49%;
+  width: 50%;
   text-transform: capitalize !important;
 }
 
 .IconImgae {
-  font-size: 30px;
+  font-size: 20px;
   margin-right: 15px;
   color: #006D75;
-}
+  margin: auto;
 
+}
+.Summary-icon{
+  display: flex;
+  justify-content: center;
+  margin-right: 15px !important;
+}
 .Item-Title {
   font-size: 13px !important;
   font-weight: 500 !important;
@@ -580,13 +616,16 @@
   background-color: #F0F0F0;
   border-radius: 35px;
   margin-bottom: 10px;
-  width: 100%;
+  width: 90%;
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: center !important;
+  margin: auto;
 }
 
 .Direction-Item {
   font-size: 15px !important;
+  margin-left: 10px !important;
+  margin-right: 40px !important;
 }
 
 .btn-play {
@@ -607,12 +646,15 @@
 
 .Bar-Item {
   background-color: #C1C3C3;
-  width: 100px;
+  width: 150px;
   height: 4px;
   border-radius: 5px;
   padding: 0 !important;
+ 
 }
-
+.value-s{
+  margin-right: 25px !important;
+}
 .History {
   display: flex;
   justify-content: center;
@@ -629,11 +671,7 @@
 }
 
 .Par-List {
-  display: flex;
-  justify-content: center;
-  position: relative;
   margin-top: 20px;
-  margin-bottom: 20px;
 }
 
 .List-TimeLine-Item {
@@ -867,6 +905,9 @@
 }
 .icon-cus-close{
   color: red		;
+}
+.Position-Channel{
+  position: relative;
 }
 @media only screen and (max-width: 1023px) {
 

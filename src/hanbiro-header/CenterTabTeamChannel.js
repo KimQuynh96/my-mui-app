@@ -13,7 +13,7 @@ import { FiDownload } from 'react-icons/fi';
 import Chip from '@mui/material/Chip';
 import { styled } from '@mui/material/styles';
 import TextField from '@mui/material/TextField';
-import { AiOutlineFileImage} from 'react-icons/ai';
+import { AiOutlineFileImage } from 'react-icons/ai';
 import { SiIconify } from 'react-icons/si';
 import { IoMdSend } from 'react-icons/io';
 import { MdOutlineAttachment } from 'react-icons/md';
@@ -188,19 +188,26 @@ export default function TabTeamChannel() {
           </CardMedia>
         </Box>
       </Box>
-      <Box className="Par-message" id="footer">
-        <Box className="message">
-          <TextField fullWidth label="Enter a message" id="fullWidth" className="message-field" />
-        </Box>
-        <Box className="List-message">
-          <Box className="message-icon-left">
-            <MdOutlineAttachment className="message-item" /> <AiOutlineFileImage className="message-item" /> < SiIconify className="message-item" />
+      <Box className="Position-Channel">
+        <Box className="Par-message" id="footer" >
+          <Box className="message">
+            <TextField fullWidth label="Enter a message" id="fullWidth" className="message-field" />
           </Box>
-          <Box className="message-icon-right">
-            <IoMdSend className="message-send" />
+          <Box className="List-message">
+            <Box className="message-icon-left">
+              <MdOutlineAttachment className="message-item" /> <AiOutlineFileImage className="message-item" /> < SiIconify className="message-item" />
+            </Box>
+            <Box className="message-icon-right">
+              <IoMdSend className="message-send" />
+            </Box>
           </Box>
         </Box>
       </Box>
+
+
+
+
+
     </Box>
   );
 }

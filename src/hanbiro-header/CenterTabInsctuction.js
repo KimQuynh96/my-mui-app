@@ -12,12 +12,26 @@ import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import './Style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Carot from "./assets/girl.jpg";
-import { AiOutlineSound, AiOutlineMore} from 'react-icons/ai';
+import { AiOutlineSound, AiOutlineMore } from 'react-icons/ai';
 const steps = [
   'ToDo',
   'Doing',
   'Done',
 ];
+
+const ProtitleNew = (params) => {
+  return (
+    <Typography component="div" className="Direction">
+      <Typography component="span" className="Direction-Item">
+        {params.title}
+      </Typography>
+
+      <Typography component="span" className="Direction-Item">
+        {params.content}
+      </Typography>
+    </Typography>
+  )
+}
 export default function TabInsctuction() {
   return (
     <Box>
@@ -39,33 +53,21 @@ export default function TabInsctuction() {
 
             <Box sx={{ display: 'flex', flexDirection: 'column' }} className="Par-Card">
               <CardContent sx={{ flex: '1 0 auto' }} >
-                <Typography component="div" className="Direction">
-                  <Typography component="span" className="Direction-Item">
-                    Direction
-                  </Typography>
 
-                  <Typography component="span" className="Direction-Item">
-                    Outgoing
-                  </Typography>
-                </Typography>
-                <Typography component="div" className="Direction">
-                  <Typography component="span" className="Direction-Item">
-                    To
-                  </Typography>
-
-                  <Typography component="span" className="Direction-Item">
-                    Situmay [05-1234-5678]
-                  </Typography>
-                </Typography>
-                <Typography component="div" className="Direction">
-                  <Typography component="span" className="Direction-Item">
-                    Messages
-                  </Typography>
-
-                  <Typography component="span" className="Direction-Item">
-                    Messages
-                  </Typography>
-                </Typography>
+                {ProtitleNew({
+                  title: "Direction",
+                  content: "Outgoing",
+                })}
+                
+                {ProtitleNew({
+                  title: "To",
+                  content: "Situmay [05-1234-5678]",
+                })}
+                {ProtitleNew({
+                  title: "Messages",
+                  content: "Messages",
+                })}
+                
               </CardContent>
 
               <Box sx={{ display: 'flex', alignItems: 'center' }} className="PlayCall">
@@ -78,7 +80,7 @@ export default function TabInsctuction() {
                 </Typography>
                 <Typography component="span" className="Bar-Item"></Typography>
                 <IconButton aria-label="play/pause">
-                  <AiOutlineSound sx={{ height: 38, width: 30 }} />
+                  <AiOutlineSound sx={{ height: 38, width: 30 }} className="value-s"/>
                 </IconButton>
                 <IconButton aria-label="play/pause">
                   <AiOutlineMore sx={{ height: 38, width: 30 }} />

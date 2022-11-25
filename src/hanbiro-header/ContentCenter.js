@@ -11,6 +11,10 @@ import TabInsctuction from './CenterTabInsctuction'
 import TabTimeline from './CenterTabTimeline'
 import TabNote from './CenterTabNote'
 import TabTeamChannel from './CenterTabTeamChannel'
+import { cyan } from '@mui/material/colors';
+import Tabs from '@mui/material/Tabs';
+
+const color = cyan[900];
 
 
 export default function ContentCenter() {
@@ -30,7 +34,7 @@ export default function ContentCenter() {
     <Box sx={{ width: '100%', typography: 'body1' }} className="Tab-Hearder">
       <TabContext value={value}>
         <Box >
-          <TabList onChange={handleChange} aria-label="lab API tabs example" className="TabList" textColor="secondary" indicatorColor="secondary" >
+          <TabList onChange={handleChange}  className="TabList"  >
             <Tab label="Insctuction" value="1" className="TabList-Item" />
             <Tab label="Timeline" value="2" className="TabList-Item" />
             <Tab label="More" value="3" className="TabList-Item" />
@@ -44,18 +48,19 @@ export default function ContentCenter() {
         </TabPanel>
         <TabPanel value="3">
           <Box sx={{ width: '100%', typography: 'body1' }}>
-            <TabContext value={value1}>
-              <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                <TabList onChange={handleChange1} aria-label="lab API tabs example" className="TabList">
+            <TabContext value={value1} >
+              <Box sx={{ borderBottom: 1, borderColor: 'divider' }} >
+                <TabList   onChange={handleChange1} centered >
                   <Tab label="Note" value="1" className="TabList-More" />
                   <Tab label="Team Channel" value="2" className="TabList-More" />
-                </TabList>
+                </TabList >
+
               </Box>
               <TabPanel value="1">
                 <TabNote />
               </TabPanel>
               <TabPanel value="2" >
-                  <TabTeamChannel />
+                <TabTeamChannel />
               </TabPanel>
             </TabContext>
           </Box>

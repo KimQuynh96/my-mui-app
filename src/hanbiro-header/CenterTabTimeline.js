@@ -1,68 +1,139 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
-import { AiFillEdit} from 'react-icons/ai';
-import { SlNote } from 'react-icons/sl';
-import { RiAttachment2 } from 'react-icons/ri';
-import { BsDownload} from 'react-icons/bs';
 import Divider from '@mui/material/Divider';
+import Timeline from '@mui/lab/Timeline';
+import TimelineItem from '@mui/lab/TimelineItem';
+import TimelineSeparator from '@mui/lab/TimelineSeparator';
+import TimelineConnector from '@mui/lab/TimelineConnector';
+import TimelineContent from '@mui/lab/TimelineContent';
+import { FaPen } from 'react-icons/fa';
+import { MdTextsms, MdOutlineAttachment } from 'react-icons/md';
 
 
-export default function TabTimeLine() {
+import TimelineOppositeContent, {
+  timelineOppositeContentClasses,
+} from '@mui/lab/TimelineOppositeContent';
+
+
+const ProtitleNew = (params) => {
   return (
-    <Box className="List-TimeLine">
-      <Typography className="Text-TimeLine">22-11-2022</Typography>
-      <Box className="Time-Header">
+    <TimelineItem >
+      <TimelineOppositeContent color="textSecondary" className="Timeline-text">
+        {params.time}
+      </TimelineOppositeContent>
+      <TimelineSeparator>
+        <Box className="Timeline-icon">  {params.icon}</Box>
+        <TimelineConnector />
+      </TimelineSeparator>
+      <TimelineContent className="Timeline-text">{params.content}</TimelineContent>
+    </TimelineItem>
 
+  )
+}
+const ProtitleNew1 = (params) => {
+  return (
+    <TimelineItem >
+      <TimelineOppositeContent color="textSecondary" className="Timeline-text">
+        {params.time}
+      </TimelineOppositeContent>
+      <TimelineSeparator>
+        <Box className="Timeline-icon">  {params.icon}</Box>
+       
+      </TimelineSeparator>
+      <TimelineContent className="Timeline-text">{params.content}</TimelineContent>
+    </TimelineItem>
+
+  )
+}
+
+const ProtitleNew2 = (params) => {
+  return (
+    <Box>
+      <Box className="Time-Header">
+        <Typography className="Text-TimeLine">{params.time}</Typography>
+        <Typography className="Date-TimeLine">{params.date}</Typography>
+      </Box>
+
+      <Box className="Time-Header">
         <Divider className="Divider-1" />
         <Divider className="Divider-2" />
         <Divider className="Divider" />
         <Divider className="Divider-1" />
         <Divider className="Divider-2" />
-
       </Box>
+    </Box>
+
+  )
+}
+
+
+
+export default function TabTimeLine() {
+  return (
+    <Box className="List-TimeLine">
+
+      {ProtitleNew2({
+        time: "Today",
+        date: "Tuesday, Jul 11,2022"
+      })}
 
       <Box className="Par-List">
-        <Divider className="Divider-History" />
-        <Divider className="Divider-History-1" />
-        <Divider className="Divider-History-2" />
-        <Divider className="Divider-History-3" />
-        <Divider className="Divider-History-4" />
-        <Divider className="Divider-History-5" />
-        <Box className="Icon-Update">
-          <AiFillEdit className="Icon-Update-item" />
-        </Box>
-        <Box className="Text-Update">
-          <Typography className="Text-Update-Item">Expected Duration was updated from 1 hour to 1 day by MSR</Typography>
-        </Box>
-        <Box className="Icon-Note">
-          <SlNote className="Icon-Update-item" />
-        </Box>
-        <Box className="Text-Note">
-          <Typography className="Text-Update-Item">KDH noted " The demo location is changed. "</Typography>
-        </Box>
-        <Box className="Icon-File">
-          <RiAttachment2 className="Icon-Update-item" />
-        </Box>
-        <Box className="Text-File">
-          <Typography className="Text-Update-Item">
-            MSR uploaded a file report.doc <br />
-            <BsDownload /> &nbsp; DownLoad
-          </Typography>
-        </Box>
-        <Box className="List-TimeLine-Item">
-          <Box component="div" className="History">
-            <Box component="div" className="History-Update"></Box>
-          </Box>
-          <Box component="div" className="History-1">
-            <Box component="div" className="History-Note"></Box>
-          </Box>
-          <Box component="div" className="History-1">
-            <Box component="div" className="History-File"></Box>
-          </Box>
-        </Box>
-
+        <Timeline
+          sx={{
+            [`& .${timelineOppositeContentClasses.root}`]: {
+              flex: 0.2,
+            },
+          }}
+        >
+          {ProtitleNew({
+            time: "09:30 am",
+            icon: <FaPen />,
+            content: "Expected Duration was updated from 1 hour to 1 day by MSR",
+          })}
+          {ProtitleNew({
+            time: "10:00 am",
+            icon: <MdTextsms />,
+            content: "KDH noted ' The demo location is changed. '",
+          })}
+          {ProtitleNew1({
+            time: "12:00 am",
+            icon: <MdOutlineAttachment />,
+            content: "MSR uploaded a file report.doc ",
+          })}
+        </Timeline>
       </Box>
+
+      {ProtitleNew2({
+        time: "Yesterday",
+        date: "Monday, Jul 10,2022"
+      })}
+       <Box className="Par-List">
+        <Timeline
+          sx={{
+            [`& .${timelineOppositeContentClasses.root}`]: {
+              flex: 0.2,
+            },
+          }}
+        >
+          {ProtitleNew({
+            time: "09:30 am",
+            icon: <FaPen />,
+            content: "Expected Duration was updated from 1 hour to 1 day by MSR",
+          })}
+          {ProtitleNew({
+            time: "10:00 am",
+            icon: <MdTextsms />,
+            content: "KDH noted ' The demo location is changed. '",
+          })}
+          {ProtitleNew1({
+            time: "12:00 am",
+            icon: <MdOutlineAttachment />,
+            content: "MSR uploaded a file report.doc ",
+          })}
+        </Timeline>
+      </Box>
+
     </Box>
   );
 }

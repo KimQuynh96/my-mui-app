@@ -23,6 +23,59 @@ import IconButton from '@mui/material/IconButton';
 
 
 
+const ProtitleNew = (params) => {
+  return (
+    <Accordion expanded={params.expanded} onChange={params.onChange}>
+      <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
+        <Typography className="Title-customer">{params.title}</Typography>
+      </AccordionSummary>
+      <AccordionDetails>
+        <Box className={params.CssSty}>
+          <Box className="customer-avatar">
+            <Stack direction="row" spacing={2} marginRight={1}>
+              <Avatar alt="Remy Sharp" src={Thocon} />
+            </Stack>
+            <Typography className="Customer-name">{params.name1}</Typography>
+          </Box>
+          <Box className="customer-icon">
+            {params.icmail} {params.icsms} {params.icclose}
+
+          </Box>
+        </Box>
+        <Box className="List-customer">
+          <Box className="customer-avatar">
+            <Stack direction="row" spacing={2} marginRight={1}>
+              <Avatar alt="Remy Sharp" src={NoiThat} />
+            </Stack>
+            <Typography className="Customer-name">{params.name2}</Typography>
+          </Box>
+          <Box className="customer-icon">
+            {params.icmailOne} {params.icsmsOne} {params.iccloseOne}
+
+          </Box>
+
+        </Box>
+        <Paper
+          component="form"
+          className="enter-customer"
+        >
+          <InputBase
+            className="input-customer"
+            placeholder="Type or click to add an user"
+          />
+
+          <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" className="Divider-customer" />
+          <IconButton aria-label="directions" className="icon-user-cus">
+            <FaUser />
+          </IconButton>
+        </Paper>
+      </AccordionDetails>
+    </Accordion >
+
+  )
+}
+
+
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
@@ -77,95 +130,39 @@ export default function ContentRight() {
   };
   return (
     <div>
-      <Accordion expanded={expanded === 'panel1'} onChange={handleChange('panel1')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography className="Title-customer">Customer </Typography>
 
+      {ProtitleNew({
+        expanded: expanded === 'panel1',
+        onChange: handleChange('panel1'),
+        title: "Customer",
+        CssSty: "List-customer",
+        name1: "Allan Rey Palban",
+        icmail: <AiOutlineMail className="icon-cus-mail" />,
+        icsms: <FaSms className="icon-cus-sms" />,
+        icclose: < AiOutlineClose className="icon-cus-close" />,
+        icmailOne: <AiOutlineMail className="icon-cus-mail" />,
+        icsmsOne: <FaSms className="icon-cus-sms" />,
+        iccloseOne: < AiOutlineClose className="icon-cus-close" />,
+        name2: "Situmay",
 
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box className="List-customer">
-            <Box className="customer-avatar">
-              <Stack direction="row" spacing={2} marginRight={1}>
-                <Avatar alt="Remy Sharp" src={Thocon} />
-              </Stack>
-              <Typography className="Customer-name">Allan Rey Palban </Typography>
-            </Box>
-            <Box className="customer-icon">
-              <AiOutlineMail className="icon-cus-mail" /> <FaSms className="icon-cus-sms" /> < AiOutlineClose className="icon-cus-close" />
-            </Box>
-          </Box>
-          <Box className="List-customer">
-            <Box className="customer-avatar">
-              <Stack direction="row" spacing={2} marginRight={1}>
-                <Avatar alt="Remy Sharp" src={NoiThat} />
-              </Stack>
-              <Typography className="Customer-name">Situmay </Typography>
-            </Box>
-            <Box className="customer-icon">
-              <AiOutlineMail className="icon-cus-mail" /> <FaSms className="icon-cus-sms" /> < AiOutlineClose className="icon-cus-close" />
-            </Box>
+      })}
 
-          </Box>
-          <Paper
-            component="form"
-            className="enter-customer"
-          >
-            <InputBase
-              className="input-customer"
-              placeholder="Type or click to add an user"
-            />
+      {ProtitleNew({
+        expanded: expanded1 === 'panel1',
+        onChange: handleChange1('panel1'),
+        title: "Assigned Rep",
+        CssSty: "List-assigned",
+        name1: "MSR",
+        icmail: "",
+        icsms: "",
+        icclose: < AiOutlineClose className="icon-cus-close" />,
+        icmailOne: <AiOutlineMail className="icon-cus-mail" />,
+        icsmsOne: <MdOutlineSmsFailed className="icon-cus-sms" />,
+        iccloseOne: < AiOutlineClose className="icon-cus-close" />,
+        name2: "KDH",
 
-            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" className="Divider-customer" />
-            <IconButton aria-label="directions" className="icon-user-cus">
-              <FaUser />
-            </IconButton>
-          </Paper>
-        </AccordionDetails>
-      </Accordion>
-      <Accordion expanded={expanded1 === 'panel1'} onChange={handleChange1('panel1')}>
-        <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography className="Title-customer">Assigned Rep.</Typography>
-        </AccordionSummary>
-        <AccordionDetails>
-          <Box className="List-assigned">
-            <Box className="customer-avatar">
-              <Stack direction="row" spacing={2} marginRight={1}>
-                <Avatar alt="Remy Sharp" src={Thocon} />
-              </Stack>
-              <Typography className="Customer-name">MSR </Typography>
-            </Box>
-            <Box className="customer-icon">
-              < AiOutlineClose className="icon-cus-close" />
-            </Box>
-          </Box>
-          <Box className="List-customer">
-            <Box className="customer-avatar">
-              <Stack direction="row" spacing={2} marginRight={1}>
-                <Avatar alt="Remy Sharp" src={NoiThat} />
-              </Stack>
-              <Typography className="Customer-name">KDH </Typography>
-            </Box>
-            <Box className="customer-icon">
-              <AiOutlineMail className="icon-cus-mail" /> <MdOutlineSmsFailed className="icon-cus-sms" /> < AiOutlineClose className="icon-cus-close" />
-            </Box>
-          </Box>
-          <Paper
-            component="form"
-            className="enter-customer"
-          >
-            <InputBase
-              className="input-customer"
-              placeholder="Type or click to add an user"
-            />
+      })}
 
-            <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" className="Divider-customer" />
-            <IconButton aria-label="directions" className="icon-user-cus">
-              <FaUser />
-            </IconButton>
-          </Paper>
-        </AccordionDetails>
-      </Accordion>
       <Accordion expanded={expanded2 === 'panel1'} onChange={handleChange2('panel1')}>
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
           <Typography className="Title-customer">Product</Typography>
