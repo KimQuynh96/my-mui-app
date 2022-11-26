@@ -2,19 +2,30 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import './Style.css';
-import { IoMdArrowRoundBack} from 'react-icons/io';
+import { IoMdArrowRoundBack } from 'react-icons/io';
 import { BsChevronDown } from 'react-icons/bs';
 import Typography from '@mui/material/Typography';
 import ContentCenter from './ContentCenter'
 import ContentLeft from './ContentLeft'
 import ContentRight from './ContentRight'
+import PopupCreateCall from './PopupCreateCall'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Fab from '@mui/material/Fab';
 import EditIcon from '@mui/icons-material/Edit';
+import Dialog from '@mui/material/Dialog';
 
 export default function Content() {
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   return (
     <>
 
@@ -31,9 +42,20 @@ export default function Content() {
             <Box className="Item-Right">
               <Button variant="primary" className="Btn-acti">Done</Button>
               <Button variant="primary" className="Btn-acti">More <BsChevronDown className="IconMore" /></Button>
-              <Fab color="secondary" aria-label="edit" className="Icon-New">
-                <EditIcon className="Icon-Write" />
-              </Fab>
+              <Button onClick={handleClickOpen}>
+                <Fab color="secondary" aria-label="edit" className="Icon-New">
+                  <EditIcon className="Icon-Write" />
+                </Fab>
+              </Button>
+              <Dialog
+                open={open}
+                onClose={handleClose}
+                aria-labelledby="alert-dialog-title"
+                aria-describedby="alert-dialog-description"
+
+              >
+                <PopupCreateCall />
+              </Dialog>
             </Box>
           </Col>
         </Row>
