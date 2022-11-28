@@ -1,5 +1,5 @@
 .nav {
-  background-color: #006D75 !important;
+  background-color: #3E5368 !important;
   box-shadow: none !important;
   padding-left: 0 !important;
 
@@ -9,9 +9,11 @@
   min-height: 0px !important;
 
 }
-.Left-menu-text{
+
+.Left-menu-text {
   font-size: 12px !important;
 }
+
 .MenuIcon {
   font-size: 20px !important;
 
@@ -24,11 +26,11 @@
 }
 
 .Icon-Dash {
-  color: white;
+  color: #3BA0CF;
 }
 
 .Left-Menu {
-  background-color: #000022	 !important;
+  background-color: #000022 !important;
   min-height: initial !important;
   padding-top: 0px !important;
 }
@@ -51,34 +53,42 @@
 }
 
 .ParLeft {
-  background-color: #012B2E	 !important;
+  background-color: #2F3B47 !important;
   position: absolute;
   height: 100%;
   color: white;
 }
 
+.ic-activity {
+  margin-left: 5px;
+}
+
+.ic-clone {
+  margin-right: 5px;
+}
+
 .Icon-Cus {
-  color: white;
+  color: #FFB866;
 }
 
 .Icon-Con {
-  color: white;
+  color: #E69395;
 }
 
 .Icon-Start {
-  color: white;
+  color: #85A6CB;
 }
 
 .Icon-Seam {
-  color: white;
+  color: #9FB886;
 }
 
 .Icon-Box {
-  color: white;
+  color: #CCCCCC;
 }
 
 .Icon-Fill {
-  color: white;
+  color: #FFFF00;
 }
 
 .LogoName:hover {
@@ -155,16 +165,22 @@
   margin-right: 5px;
 }
 
+.kimquynhtest {
+  min-height: 500px !important;
+  overflow: auto !important;
+}
+
 .Content {
   margin-top: 10px;
   width: 100%;
   display: flex;
   justify-content: space-between;
-
 }
-.Overflow-y{
+
+.Overflow-y {
   overflow-y: scroll;
 }
+
 .Box-Left {
   width: 100%;
   height: 100%;
@@ -245,19 +261,23 @@
   width: 19%;
   border-radius: 20px;
 }
-.Timeline-text{
+
+.Timeline-text {
   font-size: 15px !important;
 }
+
 .Text-TimeLine {
   display: flex;
   justify-content: center;
   font-weight: 500 !important;
-  font-size: 15px!important;
+  font-size: 15px !important;
 }
-.Date-TimeLine{
-  font-size: 15px!important;
+
+.Date-TimeLine {
+  font-size: 15px !important;
 }
-.Timeline-icon{
+
+.Timeline-icon {
   background-color: #17A2B8;
   box-shadow: rgb(140 152 164 / 13%) 0px 0.375rem 1.5rem 0px;
   border: 1px solid rgb(231, 234, 243);
@@ -265,9 +285,11 @@
   padding: 5px 10px;
   color: white;
 }
-.imelineItem{
+
+.imelineItem {
   font-size: 13px !important;
 }
+
 .List-TimeLine {
   width: 98%;
   margin-left: 1%;
@@ -278,7 +300,8 @@
   display: flex;
   width: 100%;
 }
-.List-avatar-right{
+
+.List-avatar-right {
   margin-top: 30px;
   display: flex;
   width: 100%;
@@ -295,6 +318,7 @@
   display: flex;
   border-top: 1px solid rgb(231, 234, 243);
 }
+
 .Item-Firt {
   padding: 10px;
   display: flex;
@@ -310,14 +334,17 @@
   display: flex !important;
   justify-content: space-between !important;
 }
-.TabList-md{
+
+.TabList-md {
   display: flex !important;
   justify-content: space-between !important;
   width: 100% !important;
 }
-.TabList-md-list{
- margin: auto !important;
+
+.TabList-md-list {
+  margin: auto !important;
 }
+
 .message {
   margin: auto;
   width: 96%;
@@ -356,6 +383,7 @@
   border: 1px solid rgb(231, 234, 243);
   border-radius: 3px;
 }
+
 /* #footer {
   position: fixed;
   bottom: 0;
@@ -376,7 +404,8 @@
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
 }
-.Team-channel{
+
+.Team-channel {
   margin-top: 5px;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -386,7 +415,8 @@
   display: flex;
 
 }
-.Team-channel-text{
+
+.Team-channel-text {
   margin-top: 5px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -394,11 +424,13 @@
   justify-content: left;
 
 }
-.Root{
+
+.Root {
   margin-top: 10px !important;
   margin-bottom: 10px !important;
 }
-.Team-channel-text-right{
+
+.Team-channel-text-right {
   margin-right: 10px;
   margin-top: 5px;
   padding-top: 5px;
@@ -419,72 +451,87 @@
   margin-right: 10px !important;
   margin-left: 10px !important;
 }
-.His-message-text-right{
- 
+
+.His-message-text-right {
+
   font-size: 14px !important;
   margin-right: 10px !important;
   margin-left: 10px !important;
   text-align: right !important;
 }
-.His-message-list{
+
+.His-message-list {
   margin-left: 10px !important;
 }
-.Team-channel-name{
+
+.Team-channel-name {
   margin-left: 10px !important;
   font-size: 14px !important;
   font-weight: 700 !important;
 }
-.Team-channel-name-right{
+
+.Team-channel-name-right {
   text-align: right;
   margin-right: 20px !important;
   font-size: 14px !important;
   font-weight: 700 !important;
 }
-.Team-channel-time{
+
+.Team-channel-time {
   margin-left: 10px !important;
   font-size: 14px !important;
 }
-.Team-channel-time-right{
+
+.Team-channel-time-right {
   margin-right: 20px !important;
   margin-left: 10px !important;
   font-size: 14px !important;
   text-align: right;
 }
-.Channel-name-file{
+
+.Channel-name-file {
   margin-left: 10px !important;
   font-size: 12px !important;
 }
-.Team-list-file{
+
+.Team-list-file {
   display: flex;
   justify-content: space-between;
 }
-.Team-list-file-right{
+
+.Team-list-file-right {
   display: flex;
   justify-content: space-between;
   margin-right: 10px !important;
 }
-.Channel-name-down{
+
+.Channel-name-down {
   margin-left: 10px !important;
   margin: auto;
 }
-.Channel-name-down-right{
+
+.Channel-name-down-right {
   margin-right: 10px !important;
   margin: auto;
 }
-.Team-name-file{
+
+.Team-name-file {
   display: flex;
   justify-content: space-between;
 }
-.Team-channel-img{
+
+.Team-channel-img {
   border-radius: 5px;
-  margin: 1px 6px ;
+  margin: 1px 6px;
 }
-.His-message-time{
+
+.His-message-time {
   font-size: 14px !important;
   margin-right: 10px !important;
   margin-left: 10px !important;
-  color: #808080	;
+  color: #808080;
 }
+
 .His-message-write {
   margin-right: 10px !important;
   margin-left: 10px !important;
@@ -513,14 +560,17 @@
   margin-left: 10px !important;
   color: #0033FF !important;
 }
-.His-avtar{
+
+.His-avtar {
   border-radius: 50px;
   border: 1px solid rgb(231, 234, 243);
   margin-right: 3px !important;
 }
-.His-avta-item{
+
+.His-avta-item {
   border-radius: 50px;
 }
+
 .His-message-2 {
   width: 100%;
   padding-top: 14px;
@@ -543,10 +593,10 @@
 
 .His-clock {
   font-size: 16px !important;
-  color: #808080	;
+  color: #808080;
 }
 
-.message-field label{
+.message-field label {
   font-size: 13px !important;
 }
 
@@ -567,11 +617,13 @@
   margin: auto;
 
 }
-.Summary-icon{
+
+.Summary-icon {
   display: flex;
   justify-content: center;
   margin-right: 15px !important;
 }
+
 .Item-Title {
   font-size: 13px !important;
   font-weight: 500 !important;
@@ -591,44 +643,54 @@
   justify-content: space-between;
   width: 100% !important;
 }
-.Popup-form{
+
+.Popup-form {
   width: 100%;
 }
+
 .Item-Right {
   float: right;
   margin-right: 0 !important;
 }
-.Form-title{
+
+.Form-title {
   font-size: 14px !important;
   color: #696969;
 }
-.Form-editor{
+
+.Form-editor {
   margin-top: 10px !important;
   margin-left: 10px !important;
   font-size: 14px !important;
 }
-.Form-title-1{
+
+.Form-title-1 {
   margin-bottom: 10px !important;
   font-size: 14px !important;
   color: #696969;
 }
-.Radio-text{
+
+.Radio-text {
   font-size: 15px !important;
   color: #696969;
   margin: auto !important;
   margin-left: 0 !important;
-  
+
 }
-.Radio-list{
+
+.Radio-list {
   display: flex;
 }
-.Form-list-radio{
+
+.Form-list-radio {
   display: flex !important;
   justify-content: left;
 }
-.Form-radio{
+
+.Form-radio {
   font-size: 10px !important;
 }
+
 /* .Item-Left{
   margin-left: 22px !important;
 } */
@@ -636,11 +698,13 @@
   width: 100%;
   margin-left: 0 !important;
 }
-.Assign-avatar{
+
+.Assign-avatar {
   width: 25px !important;
   height: 25px !important;
   margin: auto !important;
 }
+
 .Direction {
   width: 100%;
   display: flex;
@@ -669,10 +733,10 @@
 }
 
 .Scroll {
-  position: relative;
+  position: "relative";
   width: 80%;
   margin: auto;
-  overflow: hidden;
+  overflow: "hidden";
 }
 
 .Wrap {
@@ -686,11 +750,13 @@
   height: 4px;
   border-radius: 5px;
   padding: 0 !important;
- 
+
 }
-.value-s{
+
+.value-s {
   margin-right: 25px !important;
 }
+
 .History {
   display: flex;
   justify-content: center;
@@ -834,6 +900,10 @@
   justify-content: center;
 }
 
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+  max-width: none !important;
+}
+
 .Divider-History-2 {
   height: 2px;
   background-color: #D7420B;
@@ -850,6 +920,10 @@
   position: absolute;
   top: 250px;
   margin-left: 60px !important;
+}
+
+.FaUser-icon {
+  font-size: 15px !important;
 }
 
 .Icon-File {
@@ -872,169 +946,271 @@
   margin-right: -320px !important;
   background-color: #D7420B;
 }
-.List-customer{
+
+.List-customer {
   padding-top: 10px;
   padding-bottom: 15px;
   display: flex;
   justify-content: space-between;
 }
-.List-assigned{
+
+.List-assigned {
   margin-top: 10px;
   margin-bottom: 15px;
-  padding: 5px;
+  padding: 3px 0px;
   display: flex;
   justify-content: space-between;
   border-radius: 25px;
   background-color: #FFC107;
 }
-.enter-customer{
+
+.enter-customer {
   margin-top: 10px;
   padding: 0 4px;
   display: flex;
   border: 1px solid rgb(231, 234, 243);
 }
-.form-ip-date{
+
+.form-ip-date {
   margin-top: 10px;
   padding: 0 4px;
   display: flex;
-  width: 500px;
+  width: 700px;
   border: 1px solid rgb(231, 234, 243);
   box-shadow: none !important;
   border-left: 5px solid #1976D2;
 }
-.form-ip-priority{
+
+.form-ip-priority {
   padding: 0 4px;
   display: flex;
-  width: 500px;
-  
+  width: 700px;
+
 }
-fieldset{
+
+.css-1hbvpl3-MuiSvgIcon-root {
+  font-size: 19px !important;
+}
+
+.css-11zohuh-MuiSvgIcon-root {
+  font-size: 19px !important;
+}
+
+fieldset {
   border: 1px solid rgb(231, 234, 243) !important;
   border-left: 5px solid #1976D2 !important;
 }
-#outlined-select-currency{
-  padding: 10px !important ;
+
+#outlined-select-currency {
+  padding: 10px !important;
   font-size: 14px !important;
-  color: #696969 ;
+  color: #696969;
 }
-#outlined-select-currency-1{
-  padding: 2px 10px !important ;
+
+#outlined-select-currency-1 {
+  padding: 2px 10px !important;
   font-size: 14px !important;
-  color: #696969 ;
+  color: #696969;
 }
-.Call-button{
+
+.Call-button {
   display: flex !important;
   justify-content: center !important;
 }
-.call-cancel{
+
+.call-cancel {
   background-color: red !important;
   color: white !important;
   font-size: 12px !important;
+  margin-right: 10px !important;
 }
-.call-save{
+
+.css-sghohy-MuiButtonBase-root-MuiButton-root {
+  color: white !important;
+  font-size: 12px !important;
+}
+
+.css-1ps6pg7-MuiPaper-root {
+  box-shadow: none !important;
+}
+
+.call-save {
   background-color: #1976D2 !important;
   color: white !important;
   font-size: 12px !important;
 }
-.Assign-list{
+
+.Assign-list {
   display: flex !important;
   justify-content: space-between;
 }
-.Assign-icon{
+
+.Assign-icon {
   font-size: 15px !important;
 }
 
-.Assign-item{
+.Assign-item {
   display: flex !important;
 }
-.Assign-name{
+
+.Assign-name {
   font-size: 14px !important;
   margin: auto !important;
   margin-left: 10px !important;
 }
-.form-priority-list{
+
+.form-priority-list {
   border-radius: 4px;
 }
-.icon-user-cus{
+
+.icon-user-cus {
   padding: 8px;
   font-size: 18px !important;
 }
-.Common-form{
-  margin:15px 0 !important ;
+
+.Common-form {
+  margin: 15px 0 !important;
 }
-.form-icon-date{
+
+.form-icon-date {
   padding: 8px;
   font-size: 18px !important;
 }
-.Form-create{
+
+.Form-create {
   padding: 0 20px !important;
   font-size: 13px !important;
 }
-.input-customer{
+
+.input-customer {
   margin-left: 1px;
   flex: 1;
   font-size: 14px !important;
 }
-.input-date{
+
+.input-date {
   margin-left: 1px;
   flex: 1;
   font-size: 14px !important;
 }
-.input-date-1{
+
+.input-date-1 {
   padding: 5px 0 !important;
   margin-left: 1px;
   flex: 1;
   font-size: 14px !important;
 }
-.Divider-customer{
+
+.Divider-customer {
   /* sx={{ height: 28, m: 0.5 }} */
-  
+
   margin-top: 8px !important;
   background-color: #000022;
 }
-.Divider-ip-date{
+
+.Divider-ip-date {
   margin-top: 8px !important;
   background-color: #000022;
 }
-.customer-avatar{
+
+.customer-avatar {
   display: flex;
 }
-.customer-icon{
+
+.customer-icon {
   margin: auto;
   margin-right: 0;
 }
-.Customer-name{
+
+.Customer-name {
   margin: auto !important;
   font-size: 14px !important;
   font-weight: 400 !important;
 }
-.product-name{
+
+.product-name {
   margin: auto !important;
   font-size: 14px !important;
   font-weight: 400 !important;
   color: #0033FF;
 }
-.Title-customer{
+
+.Title-customer {
   font-size: 14px !important;
   font-weight: 700 !important;
 }
-.icon-cus-mail{
+
+.icon-cus-mail {
   color: #3FD8D8;
   margin-right: 10px;
 }
-.icon-cus-sms{
-  color: #003300		;
+
+.icon-cus-sms {
+  color: #003300;
   margin-right: 8px;
 }
-.icon-cus-close{
-  color: red		;
+
+.icon-cus-close {
+  color: red;
 }
-.Position-Channel{
+
+.Position-Channel {
   position: relative;
 }
+
+.Size-ava {
+  width: 35px !important;
+  height: 35px !important;
+}
+
+.Sub-Header-Mobi {
+  display: none !important;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #777;
+  border-radius: 4px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #8392A5;
+}
+
 @media only screen and (max-width: 1023px) {
 
-  .kimtest {
+  .Sub-Header {
+    display: none !important;
+  }
+
+  .Sub-Header-Mobi {
+    display: flex !important;
+    justify-content: space-between !important;
+    margin: auto !important;
+  }
+
+  .Text-Call {
+    margin: auto !important;
+  }
+
+  .Header {
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+  .Left-Menu-List {
     display: none;
   }
+
 }

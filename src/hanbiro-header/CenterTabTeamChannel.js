@@ -28,7 +28,7 @@ const Root = styled('div')(({ theme }) => ({
 
 export default function TabTeamChannel() {
   return (
-    <Box id="content">
+    <Box id="content" >
       <Box className="List-TimeLine">
         <Typography className="Text-TimeLine">22-11-2022</Typography>
         <Box className="Time-Header">
@@ -43,7 +43,7 @@ export default function TabTeamChannel() {
         <Box className="List-avatar">
           <CardMedia>
             <Box className="His-avtar">
-              <img src={Thocon} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+              <img src={NoiThat} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
             </Box>
           </CardMedia>
 
@@ -105,7 +105,7 @@ export default function TabTeamChannel() {
           </Box>
           <CardMedia>
             <Box className="His-avtar">
-              <img src={Hinhve} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+              <img src={Hoa} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
             </Box>
           </CardMedia>
         </Box>
@@ -203,11 +203,6 @@ export default function TabTeamChannel() {
           </Box>
         </Box>
       </Box>
-
-
-
-
-
     </Box>
   );
 }

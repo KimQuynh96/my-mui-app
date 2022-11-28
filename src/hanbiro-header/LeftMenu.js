@@ -25,8 +25,6 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import LogoutIcon from '@mui/icons-material/Logout';
-import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
@@ -39,10 +37,12 @@ import { BsBoxSeam, BsBox, BsPatchCheck } from 'react-icons/bs';
 import Content from './Content'
 import './Style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { color } from '@mui/system';
+
+
+
+
 
 const drawerWidth = 240;
-
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
   borderRadius: theme.shape.borderRadius,
@@ -371,7 +371,7 @@ export default function MiniDrawer() {
           {/*  */}
         </Toolbar>
       </AppBar>
-      <Drawer variant="permanent" open={open} className="kimtest">
+      <Drawer variant="permanent" open={open} className="Left-Menu-List">
         <DrawerHeader className="Left-Menu">
           <IconButton onClick={handleDrawerClose}>
             <Typography className="LogoName">
@@ -418,6 +418,7 @@ export default function MiniDrawer() {
         <DrawerHeader />
         <Content />
       </Box>
+      
     </Box>
   );
 }

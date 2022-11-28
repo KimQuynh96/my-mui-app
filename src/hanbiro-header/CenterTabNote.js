@@ -13,6 +13,8 @@ import TextField from '@mui/material/TextField';
 import { AiOutlineFileImage, AiOutlineClockCircle, AiOutlineClose } from 'react-icons/ai';
 import Thocon from "./assets/thocon.jpg";
 import Divider from '@mui/material/Divider';
+import NoiThat from "./assets/noithat.jpg";
+import Hoa from "./assets/hoatulip.jpg";
 
 
 export default function TabNote() {
@@ -45,7 +47,7 @@ export default function TabNote() {
         <Box className="List-avatar">
           <CardMedia>
             <Box className="His-avtar">
-              <img src={Carot} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+              <img src={NoiThat} style={{ width: 45, height: 45 }} className="His-avta-item"></img>
 
             </Box>
           </CardMedia>
@@ -80,7 +82,7 @@ export default function TabNote() {
         <Box className="List-avatar">
           <CardMedia>
             <Box className="His-avtar">
-              <img src={Thocon} style={{ width: 50, height: 49 }} className="His-avta-item"></img>
+              <img src={Hoa} style={{ width: 45, height: 45 }} className="His-avta-item"></img>
             </Box>
           </CardMedia>
           <Box className="His-message-List">

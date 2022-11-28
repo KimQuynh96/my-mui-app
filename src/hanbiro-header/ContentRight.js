@@ -12,6 +12,8 @@ import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import Thocon from "./assets/thocon.jpg";
 import NoiThat from "./assets/noithat.jpg";
+import Hinhve from "./assets/hinhve.jpg";
+import Hoa from "./assets/hoatulip.jpg";
 import { AiOutlineMail, AiOutlineClose } from 'react-icons/ai';
 import { MdOutlineSmsFailed } from 'react-icons/md';
 import { FaSms } from 'react-icons/fa';
@@ -33,7 +35,7 @@ const ProtitleNew = (params) => {
         <Box className={params.CssSty}>
           <Box className="customer-avatar">
             <Stack direction="row" spacing={2} marginRight={1}>
-              <Avatar alt="Remy Sharp" src={Thocon} />
+              <Avatar alt="Remy Sharp" src={params.avatar1} className="Size-ava" />
             </Stack>
             <Typography className="Customer-name">{params.name1}</Typography>
           </Box>
@@ -45,13 +47,12 @@ const ProtitleNew = (params) => {
         <Box className="List-customer">
           <Box className="customer-avatar">
             <Stack direction="row" spacing={2} marginRight={1}>
-              <Avatar alt="Remy Sharp" src={NoiThat} />
+              <Avatar alt="Remy Sharp" src={params.avatar2} className="Size-ava" />
             </Stack>
             <Typography className="Customer-name">{params.name2}</Typography>
           </Box>
           <Box className="customer-icon">
             {params.icmailOne} {params.icsmsOne} {params.iccloseOne}
-
           </Box>
 
         </Box>
@@ -66,7 +67,7 @@ const ProtitleNew = (params) => {
 
           <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" className="Divider-customer" />
           <IconButton aria-label="directions" className="icon-user-cus">
-            <FaUser />
+            <FaUser className="FaUser-icon"/>
           </IconButton>
         </Paper>
       </AccordionDetails>
@@ -74,7 +75,6 @@ const ProtitleNew = (params) => {
 
   )
 }
-
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -144,6 +144,8 @@ export default function ContentRight() {
         icsmsOne: <FaSms className="icon-cus-sms" />,
         iccloseOne: < AiOutlineClose className="icon-cus-close" />,
         name2: "Situmay",
+        avatar1:{Thocon},
+        avatar2:NoiThat
 
       })}
 
@@ -160,6 +162,8 @@ export default function ContentRight() {
         icsmsOne: <MdOutlineSmsFailed className="icon-cus-sms" />,
         iccloseOne: < AiOutlineClose className="icon-cus-close" />,
         name2: "KDH",
+        avatar1:Hoa,
+        avatar2:Hinhve
 
       })}
 
@@ -187,7 +191,7 @@ export default function ContentRight() {
 
             <Divider sx={{ height: 28, m: 0.5 }} orientation="vertical" className="Divider-customer" />
             <IconButton aria-label="directions" className="icon-user-cus">
-              <FaUser />
+              <FaUser className="FaUser-icon"/>
             </IconButton>
           </Paper>
         </AccordionDetails>

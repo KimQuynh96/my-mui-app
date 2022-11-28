@@ -21,6 +21,7 @@ import NoiThat from "./assets/noithat.jpg";
 import Avatar from '@mui/material/Avatar';
 import { FaUser } from 'react-icons/fa';
 import Thocon from "./assets/thocon.jpg";
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 
 const AccordionSummary = styled((props) => (
@@ -197,7 +198,6 @@ export default function CreateCall() {
           autoComplete="off"
           className="form-priority-list"
         >
-
           <TextField
             id="outlined-select-currency-1"
             select
@@ -262,7 +262,21 @@ export default function CreateCall() {
       </Box>
     )
   }
-
+  const ProtitleNewRadioNoSelect = (params) => {
+    return (
+      <Box className="Form-list-radio">
+        <Radio
+          checked={selectedValue === 'b'}
+          onChange={handleChange}
+          value="b"
+          name="radio-buttons"
+          inputProps={{ 'aria-label': 'B' }}
+          className="Form-radio"
+        />
+        <Typography className="Radio-text">{params.title}</Typography>
+      </Box>
+    )
+  }
 
 
   return (
@@ -277,7 +291,7 @@ export default function CreateCall() {
             {ProtitleNewRadio({
               title: "Incoming",
             })}
-            {ProtitleNewRadio({
+            {ProtitleNewRadioNoSelect({
               title: "Outgoing",
             })}
           </Box>
@@ -325,9 +339,11 @@ export default function CreateCall() {
 
         <DialogActions className="Call-button">
           <Button onClick={handleClose} className="call-cancel">Cancel</Button>
-          <Button onClick={handleClose} autoFocus className="call-save">
-            Save
-          </Button>
+          
+          <ButtonGroup variant="contained" >
+            <Button onClick={handleClose}>Save</Button>
+            <Button onClick={handleClose}>Save and Create New</Button>
+          </ButtonGroup>
         </DialogActions>
       </Box>
     </Box >
