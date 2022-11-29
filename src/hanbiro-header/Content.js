@@ -152,7 +152,6 @@ export default function Content() {
     )
   }
 
-
   return (
     <>
       <Box className="Header" >
@@ -173,14 +172,15 @@ export default function Content() {
           </Col>
         </Row>
         <Row className="Sub-Header-Mobi">
-          <Col xs={12}  >
-            <Box className="Item-Left-mobi">
-              {ProtitleBtnBack({})}
-              {ProtitleSubject({})}
-              {ProtitleBtnWrite({})}
-            </Box>
+          <Col xs={3}  className="Item-Left-mobi">
+            {ProtitleBtnBack({})}
           </Col>
-         
+          <Col xs={3}  className="Item-Left-mobi">
+            {ProtitleSubject({})}
+          </Col>
+          <Col xs={3}  className="Item-Left-mobi">
+            {ProtitleBtnWrite({})}
+          </Col>
         </Row>
       </Box>
 

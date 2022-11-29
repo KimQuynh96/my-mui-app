@@ -734,12 +734,13 @@
 
 .Scroll {
   position: "relative";
-  width: 80%;
+  width: 100%;
   margin: auto;
   overflow: "hidden";
 }
 
 .Wrap {
+  display: flex;
   width: 100%;
   overflow: auto;
 }
@@ -1162,16 +1163,45 @@ fieldset {
   width: 35px !important;
   height: 35px !important;
 }
-
+.icon-menuicon-mobi{
+  display: none !important;
+}
 .Sub-Header-Mobi {
   display: none !important;
+}
+.Item-Left-mobi{
+  width: 33% !important;
+  margin: auto !important;
 }
 
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
 }
-
+.His-call{
+  display: flex !important;
+  margin: 30px 0 10px 0 !important;
+  box-shadow: none !important;
+  width: 100% !important;
+}
+.css-hyum1k-MuiToolbar-root{
+  min-height: 50px!important 
+}
+.Divider-call{
+  background-color: #000022;
+}
+.css-1ebprri{
+  margin-top: unset !important;
+}
+.Create-AppBar{
+  box-shadow:none !important;
+  top: unset !important;
+  right: unset !important;
+  width: 40% !important;
+  background-color: white !important;
+  color: black !important;
+  border-radius: 4px !important;
+}
 /* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
@@ -1189,7 +1219,12 @@ fieldset {
 }
 
 @media only screen and (max-width: 1023px) {
-
+  .icon-menuicon-mobi{
+    display: block !important;
+  }
+  .icon-menuicon-web{
+    display: none !important;
+  }
   .Sub-Header {
     display: none !important;
   }
@@ -1198,6 +1233,7 @@ fieldset {
     display: flex !important;
     justify-content: space-between !important;
     margin: auto !important;
+    width: 100%;
   }
 
   .Text-Call {
@@ -1212,5 +1248,5 @@ fieldset {
   .Left-Menu-List {
     display: none;
   }
-
+  
 }

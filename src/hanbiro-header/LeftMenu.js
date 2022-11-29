@@ -1,5 +1,5 @@
 
-import React, { useState, createRef } from "react";
+import React, { useState } from "react";
 import { styled, useTheme, alpha } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiDrawer from '@mui/material/Drawer';
@@ -21,24 +21,23 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import MenuItem from '@mui/material/MenuItem';
 import Menu from '@mui/material/Menu';
-import MailIcon from '@mui/icons-material/Mail';
-import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import LogoutIcon from '@mui/icons-material/Logout';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
 import { AiOutlineDashboard, AiFillStar } from 'react-icons/ai';
 import { IoIosContact } from 'react-icons/io';
 import { RiCustomerServiceFill, RiUserStarFill } from 'react-icons/ri';
-import { BsBoxSeam, BsBox, BsPatchCheck } from 'react-icons/bs';
+import { BsBoxSeam, BsBox } from 'react-icons/bs';
 import Content from './Content'
 import './Style.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
+import InboxIcon from '@mui/icons-material/MoveToInbox';
+import MailIcon from '@mui/icons-material/Mail';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import Button from '@mui/material/Button';
 
 
 
@@ -135,6 +134,7 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 );
 
 export default function MiniDrawer() {
+
   const [isShown, setIsShown] = useState(false);
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
@@ -168,8 +168,37 @@ export default function MiniDrawer() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
-
   const menuId = 'primary-search-account-menu';
+
+  const ProtitleNew = (params) => {
+    return (
+      <>
+        <IconButton size="large" color="inherit">
+          <Badge badgeContent={params.number} color="error">
+            {params.icon}
+          </Badge>
+        </IconButton>
+        <p>{params.text}</p>
+      </>
+    )
+  }
+  const ProtitleMore = (params) => {
+    return (
+      <>
+        <IconButton
+          size="large"
+          edge="end"
+          aria-controls={params.menu}
+          aria-haspopup="true"
+          onClick={handleProfileMenuOpen}
+          color="inherit"
+        >
+          {params.icon}
+        </IconButton>
+      </>
+    )
+  }
+
   const renderMenu = (
     <Menu
       anchorEl={anchorEl}
@@ -226,39 +255,82 @@ export default function MiniDrawer() {
       onClose={handleMobileMenuClose}
     >
       <MenuItem>
-        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-          <Badge badgeContent={4} color="error">
-            <MailIcon />
-          </Badge>
-        </IconButton>
-        <p>Messages</p>
+        {ProtitleNew({
+          number: 2,
+          icon: <NotificationsNoneIcon />,
+          text: "Notifications"
+        })}
       </MenuItem>
       <MenuItem>
-        <IconButton
-          size="large"
-          aria-label="show 17 new notifications"
-          color="inherit"
-        >
-          <Badge badgeContent={17} color="error">
-            <NotificationsIcon />
-          </Badge>
-        </IconButton>
-        <p>Notifications</p>
+        {ProtitleNew({
+          icon: <SettingsIcon />,
+          text: "Settings"
+        })}
       </MenuItem>
-      <MenuItem onClick={handleProfileMenuOpen}>
-        <IconButton
-          size="large"
-          aria-label="account of current user"
-          aria-controls="primary-search-account-menu"
-          aria-haspopup="true"
-          color="inherit"
-        >
-          <AccountCircle />
-        </IconButton>
-        <p>Profile</p>
+      <MenuItem>
+        {ProtitleNew({
+          icon: <HelpOutlineIcon />,
+          text: "Help"
+        })}
       </MenuItem>
+      <MenuItem>
+        {ProtitleNew({
+          icon: <AccountCircle />,
+          text: "Profile"
+        })}
+      </MenuItem>
+      <MenuItem>
+        {ProtitleNew({
+          icon: <LogoutIcon />,
+          text: "Logout"
+        })}
+      </MenuItem>
+
     </Menu>
   );
+
+  const [state, setState] = React.useState({
+    top: false,
+    left: false,
+    bottom: false,
+    right: false,
+  });
+
+  const toggleDrawer = (anchor, open) => (event) => {
+    if (
+      event &&
+      event.type === 'keydown' &&
+      (event.key === 'Tab' || event.key === 'Shift')
+    ) {
+      return;
+    }
+
+    setState({ ...state, [anchor]: open });
+  };
+
+  const list = (anchor) => (
+    <Box
+      sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
+      role="presentation"
+      onClick={toggleDrawer(anchor, false)}
+      onKeyDown={toggleDrawer(anchor, false)}
+    >
+      <List>
+        {['Dashboard', 'My Work', 'Desk', 'Customer', 'Product', 'Demo Page', 'Favorites'].map((text, index) => (
+          <ListItem key={text} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+              {renderIcon(index)}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItemButton>
+          </ListItem>
+        ))}
+      </List>
+      
+    </Box>
+  );
+
 
   return (
     <Box sx={{ display: 'flex' }} >
@@ -266,6 +338,7 @@ export default function MiniDrawer() {
       <AppBar position="fixed" open={open} className="nav">
         <Toolbar className="subnav">
           <IconButton
+            className="icon-menuicon-web"
             color="inherit"
             aria-label="open drawer"
             onClick={handleDrawerOpen}
@@ -277,7 +350,35 @@ export default function MiniDrawer() {
           >
             <MenuIcon />
           </IconButton>
-          {/*  */}
+
+          <Box>
+            {['left'].map((anchor) => (
+              <React.Fragment key={anchor}>
+                <IconButton
+                  className="icon-menuicon-mobi"
+                  color="inherit"
+                  aria-label="open drawer"
+                  onClick={toggleDrawer(anchor, true)}
+                  edge="start"
+                  sx={{
+                    marginRight: 5,
+                    ...(open && { display: 'none' }),
+                  }}
+                >
+                  <MenuIcon />
+                </IconButton>
+                <SwipeableDrawer
+                  anchor={anchor}
+                  open={state[anchor]}
+                  onClose={toggleDrawer(anchor, false)}
+                  onOpen={toggleDrawer(anchor, true)}
+                >
+                  {list(anchor)}
+                </SwipeableDrawer>
+              </React.Fragment>
+            ))}
+          </Box>
+
           <Typography
             variant="h6"
             noWrap
@@ -307,56 +408,30 @@ export default function MiniDrawer() {
 
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-            <IconButton size="large" aria-label="show 4 new mails" color="inherit">
-              <Badge badgeContent={2} color="error">
-                <NotificationsNoneIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge color="error">
-                <SettingsIcon />
-              </Badge>
-            </IconButton>
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge color="error">
-                <HelpOutlineIcon />
-              </Badge>
-            </IconButton>
+            {ProtitleNew({
+              number: 2,
+              icon: <NotificationsNoneIcon />,
+            })}
+            {ProtitleNew({
+              icon: <SettingsIcon />,
+            })}
+            {ProtitleNew({
+              icon: <HelpOutlineIcon />,
 
-            <IconButton
-              size="large"
-              edge="end"
-              aria-label="account of current user"
-              aria-controls={menuId}
-              aria-haspopup="true"
-              onClick={handleProfileMenuOpen}
-              color="inherit"
-            >
-              <AccountCircle />
-            </IconButton>
+            })}
+            {ProtitleMore({
+              menu: { menuId },
+              icon: <AccountCircle />,
 
-            <IconButton
-              size="large"
-              aria-label="show 17 new notifications"
-              color="inherit"
-            >
-              <Badge color="error">
-                <LogoutIcon />
-              </Badge>
-            </IconButton>
+            })}
+
+            {ProtitleNew({
+              icon: <LogoutIcon />,
+            })}
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
-              aria-label="show more"
               aria-controls={mobileMenuId}
               aria-haspopup="true"
               onClick={handleMobileMenuOpen}
@@ -365,12 +440,10 @@ export default function MiniDrawer() {
               <MoreIcon />
             </IconButton>
           </Box>
-
-
-
-          {/*  */}
         </Toolbar>
       </AppBar>
+      {renderMobileMenu}
+      {renderMenu}
       <Drawer variant="permanent" open={open} className="Left-Menu-List">
         <DrawerHeader className="Left-Menu">
           <IconButton onClick={handleDrawerClose}>
@@ -385,8 +458,6 @@ export default function MiniDrawer() {
         </DrawerHeader>
         <Divider />
         <List className="ParLeft">
-
-
           {['Dashboard', 'My Work', 'Desk', 'Customer', 'Product', 'Demo Page', 'Favorites'].map((text, index) => (
             <ListItem key={text} disablePadding sx={{ display: 'block' }} >
               <ListItemButton
@@ -418,7 +489,6 @@ export default function MiniDrawer() {
         <DrawerHeader />
         <Content />
       </Box>
-      
     </Box>
   );
 }

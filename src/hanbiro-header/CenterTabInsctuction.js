@@ -44,9 +44,10 @@ export default function TabInsctuction() {
           ))}
         </Stepper>
       </Box>
-      <Box className="Scroll">
-        <Box className="Wrap">
-          <Card sx={{ display: 'flex', marginTop: 5 }} >
+
+      <Card className="His-call">
+        <Box className="Scroll">
+          <Box className="Wrap">
             <CardMedia>
               <img src={Carot} style={{ width: 140, height: 120 }}></img>
             </CardMedia>
@@ -58,7 +59,7 @@ export default function TabInsctuction() {
                   title: "Direction",
                   content: "Outgoing",
                 })}
-                
+
                 {ProtitleNew({
                   title: "To",
                   content: "Situmay [05-1234-5678]",
@@ -67,7 +68,7 @@ export default function TabInsctuction() {
                   title: "Messages",
                   content: "Messages",
                 })}
-                
+
               </CardContent>
 
               <Box sx={{ display: 'flex', alignItems: 'center' }} className="PlayCall">
@@ -80,16 +81,17 @@ export default function TabInsctuction() {
                 </Typography>
                 <Typography component="span" className="Bar-Item"></Typography>
                 <IconButton aria-label="play/pause">
-                  <AiOutlineSound sx={{ height: 38, width: 30 }} className="value-s"/>
+                  <AiOutlineSound sx={{ height: 38, width: 30 }} className="value-s" />
                 </IconButton>
                 <IconButton aria-label="play/pause">
                   <AiOutlineMore sx={{ height: 38, width: 30 }} />
                 </IconButton>
               </Box>
             </Box>
-          </Card>
+          </Box>
         </Box>
-      </Box>
+      </Card>
     </Box>
+
   );
 }

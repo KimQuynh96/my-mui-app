@@ -5,14 +5,12 @@ import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import './Style.css';
-import { styled } from '@mui/material/styles';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TabInsctuction from './CenterTabInsctuction'
 import TabTimeline from './CenterTabTimeline'
 import TabNote from './CenterTabNote'
 import TabTeamChannel from './CenterTabTeamChannel'
 import { cyan } from '@mui/material/colors';
-import Tabs from '@mui/material/Tabs';
 
 const color = cyan[900];
 
