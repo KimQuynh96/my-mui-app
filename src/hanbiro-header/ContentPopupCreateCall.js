@@ -27,6 +27,7 @@ import FormControl from '@mui/material/FormControl';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormLabel from '@mui/material/FormLabel';
 import RadioGroup from '@mui/material/RadioGroup';
+import CreateCallRadio from './CreateCallRadio'
 
 
 const AccordionSummary = styled((props) => (
@@ -122,7 +123,7 @@ export default function CreateCall() {
   const handleClose = () => {
     setOpen(false);
   };
-  const [selectedValue, setSelectedValue] = React.useState('a');
+  const [selectedValue, setSelectedValue] = React.useState('best');
 
   const handleChange = (event) => {
     setSelectedValue(event.target.value);
@@ -130,7 +131,7 @@ export default function CreateCall() {
 
   const ProtitleNewIcon = (params) => {
     return (
-      <Box className="Common-form">
+      <Box className={params.title}>
         <Typography className="Form-title">{params.title}</Typography>
         <Paper
           component="form"
@@ -256,9 +257,9 @@ export default function CreateCall() {
     return (
       <Box className="Form-list-radio">
         <Radio
-          checked={selectedValue === 'a'}
+          checked={selectedValue === 'best'}
           onChange={handleChange}
-          value="a"
+          value="best"
           name="radio-buttons"
           inputProps={{ 'aria-label': 'A' }}
           className="Form-radio"
@@ -271,9 +272,9 @@ export default function CreateCall() {
     return (
       <Box className="Form-list-radio">
         <Radio
-          checked={selectedValue === 'b'}
+          checked={selectedValue === 'worst'}
           onChange={handleChange}
-          value="b"
+          value="worst"
           name="radio-buttons"
           inputProps={{ 'aria-label': 'B' }}
           className="Form-radio"
@@ -282,28 +283,36 @@ export default function CreateCall() {
       </Box>
     )
   }
-  // Test
-  const [value, setValue] = React.useState('');
+  // Radio Incoming
+  const [value, setValue] = React.useState("");
   const [error, setError] = React.useState(false);
-  const [helperText, setHelperText] = React.useState('Choose wisely');
+  const [helperText, setHelperText] = React.useState(
+    <Box>{ProtitleNewIcon({
+      title: "Date",
+      icon: <GoClock />
+    })}
+    </Box>
+  );
 
   const handleRadioChange = (event) => {
-    setValue(event.target.value);
-    setHelperText(' ');
-    setError(false);
-  };
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-
-    if (value === 'best') {
-      setHelperText('You got it!');
+    let testValue = event.target.value;
+    setValue(testValue);
+    if (testValue === "best") {
+      setHelperText(
+        <Box>{ProtitleNewIcon({
+          title: "Date",
+          icon: <GoClock />
+        })}
+        </Box>
+      );
       setError(false);
-    } else if (value === 'worst') {
-      setHelperText('Sorry, wrong answer!');
+    } else if (testValue === "worst") {
+      // Radio Outgoing
+      setHelperText(<CreateCallRadio />);
       setError(true);
+
     } else {
-      setHelperText('Please select an option.');
+      setHelperText("Please select an option.");
       setError(true);
     }
   };
@@ -315,20 +324,49 @@ export default function CreateCall() {
       <Box className="Form-create">
         <Box className="Common-form">
           <Typography className="Form-title">Direction</Typography>
-          <Box className="Radio-list">
-            {ProtitleNewRadio({
-              title: "Incoming",
-            })}
-            {ProtitleNewRadioNoSelect({
-              title: "Outgoing",
-            })}
-          </Box>
-        </Box>
+          <form >
+            <FormControl error={error} variant="standard">
 
-        {ProtitleNewIcon({
-          title: "Date",
-          icon: <GoClock />
-        })}
+              <RadioGroup
+                RadioGroup
+                row
+                aria-labelledby="demo-error-radios"
+                name="quiz"
+                value={value}
+                onChange={handleRadioChange}
+              >
+                <FormControlLabel
+                  className="Form-list-radio"
+                  value="best"
+                  control={
+                    <Radio checked={selectedValue === 'best'}
+                      onChange={handleChange}
+                      value="best"
+                      name="radio-buttons"
+                      inputProps={{ 'aria-label': 'A' }}
+                      className="Form-radio" />
+
+                  }
+                  label="Incoming"
+                />
+                <FormControlLabel
+                  className="Form-list-radio"
+                  value="worst"
+                  control={
+                    <Radio checked={selectedValue === 'worst'}
+                      onChange={handleChange}
+                      value="worst"
+                      name="radio-buttons"
+                      inputProps={{ 'aria-label': 'B' }}
+                      className="Form-radio" />}
+                  label="Outgoing"
+                />
+              </RadioGroup>
+              <FormHelperText>{helperText}</FormHelperText>
+
+            </FormControl>
+          </form>
+        </Box>
 
         {ProtitleNew({
           title: "Subject",
@@ -376,25 +414,8 @@ export default function CreateCall() {
 
 
 
-        {/* // Test */}
-        <form onSubmit={handleSubmit}>
-          <FormControl sx={{ m: 3 }} error={error} variant="standard">
-            <FormLabel id="demo-error-radios">Pop quiz: MUI is...</FormLabel>
-            <RadioGroup
-              aria-labelledby="demo-error-radios"
-              name="quiz"
-              value={value}
-              onChange={handleRadioChange}
-            >
-              <FormControlLabel value="best" control={<Radio />} label="The best!" />
-              <FormControlLabel value="worst" control={<Radio />} label="The worst." />
-            </RadioGroup>
-            <FormHelperText>{helperText}</FormHelperText>
-            <Button sx={{ mt: 1, mr: 1 }} type="submit" variant="outlined">
-              Check Answer
-            </Button>
-          </FormControl>
-        </form>
+
+
       </Box>
     </Box >
   );
